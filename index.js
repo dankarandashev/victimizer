@@ -43,6 +43,7 @@ function chooseVictim() {
 
   const victimElem = document.getElementById(user.id);
   victimElem.classList.add("newVictim");
+  victimElem.innerHTML = victimElem.innerHTML + " (" + counter + ")";
   previousVictimId = user.id;
 
   console.log(`Victim's name is ${user.name} (id ${user.id})`);
