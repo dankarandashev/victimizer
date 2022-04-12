@@ -47,12 +47,18 @@ function checkIfListIsEmpty() {
 }
 
 function addStringToData(input) {
-  const array = input.replace(/\s/g, ";").split(";");
+  const array = input.replace(/, /g, "_").replace(/\s/g, ";").split(";");
   array.forEach((element) => {
     if (element.length > 0) {
       const id = data.length;
       let newUserName =
         element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
+        const strArr = newUserName.split("");
+        const i = strArr.indexOf('_');
+        if (i != -1) {
+          strArr[i + 1] = strArr[i + 1].toUpperCase();
+        }
+        newUserName = strArr.join('');
       let sameNameNumber = 1;
       data.forEach((el) => {
         el.name == newUserName ? sameNameNumber++ : "";
