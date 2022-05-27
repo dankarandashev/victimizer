@@ -18,6 +18,7 @@ let data = [
 let counter = 0;
 let previousVictimId = -1;
 let useEnter = false;
+let sameNameNumber = 1;
 
 const ENTER_ON = 'Enter (on)';
 const ENTER_OFF = 'Enter (off)';
@@ -59,7 +60,6 @@ function addStringToData(input) {
           strArr[i + 1] = strArr[i + 1].toUpperCase();
         }
         newUserName = strArr.join('');
-      let sameNameNumber = 1;
       data.forEach((el) => {
         el.name == newUserName ? sameNameNumber++ : "";
       });
